@@ -1,0 +1,13 @@
+ABOUT
+======================
+This project contains:
+
+** Logback
+* Basic usage
+* Multiple logback configurations (one log configuration for tests and other for the project itself)
+* Artifact version displayed on log messages (trough maven resource filtering)
+
+** Maven
+* Copy resources with filtering (for artifact version to be displayed on log messages).
+* Whenever built, packages all dependencies in a .zip file
+* Includes initialization scripts (.sh and .bat) in the final package
