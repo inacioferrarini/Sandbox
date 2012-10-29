@@ -9,13 +9,13 @@
 	</appender>
 
 	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logback.log</File>
+		<File>${project.artifactId}.log</File>
 		<Append>true</Append>
 		<encoder>
 			<pattern>[${project.version}][%d{dd-MM-yyyy HH:mm:ss,Brazil/East} %X{clientIP}] [%t] %p %c - %m%n</pattern>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logback.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>${project.artifactId}.log.%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 	</appender>
 
