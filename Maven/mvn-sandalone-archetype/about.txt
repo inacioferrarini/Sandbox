@@ -1,0 +1,6 @@
+ABOUT
+======================
+This project contains:
+
+** Maven
+* Archetype that generates projects with Logback and Standlone packaging configured.
