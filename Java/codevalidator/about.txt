@@ -1,7 +1,0 @@
-ABOUT
-======================
-This project contains:
-
-Standalone Project created from my archetype sandbox.inacio.maven:mvn-sandalone-archetype:1.0.
-
-This project implements a validation for a source code block.
