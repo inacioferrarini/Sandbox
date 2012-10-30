@@ -18,8 +18,10 @@
 			<fileNamePattern>${project.artifactId}-tests.log.%d{yyyy-MM-dd}</fileNamePattern>
 		</rollingPolicy>
 	</appender>
-
-	<logger name="sandbox.inacio.logback" level="warn" />
+    
+    <!-- 
+	<logger name="package" level="LEVEL" />
+    -->
 
 	<root level="error">
 		<appender-ref ref="stdout" />
