@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-{
+public class AppTest {
+	
 	static final Logger logger = LoggerFactory.getLogger(AppTest.class);
 	
 	@Test
@@ -18,5 +18,6 @@ public class AppTest
 		logger.info("Info Level Message");
 		logger.warn("Warn Level Message");
 		logger.error("Error Level Message");		
-	}	
+	}
+	
 }
