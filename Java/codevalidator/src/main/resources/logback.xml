@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<!-- appenders -->
-	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<pattern>[${project.version}] [%d{dd-MM-yyyy HH:mm:ss,Brazil/East}] [%thread] %-5level %logger: %msg%n</pattern>
-		</layout>
-	</appender>
-
 	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<File>${project.artifactId}.log</File>
 		<Append>true</Append>
@@ -19,10 +12,10 @@
 		</rollingPolicy>
 	</appender>
 
-	<logger name="sandbox.inacio.logback" level="warn" />
+	<logger name="sandbox.inacio.codevalidator" level="debug" />
 
 	<root level="error">
-		<appender-ref ref="stdout" />
 		<appender-ref ref="logfile" />
 	</root>
+	
 </configuration>
