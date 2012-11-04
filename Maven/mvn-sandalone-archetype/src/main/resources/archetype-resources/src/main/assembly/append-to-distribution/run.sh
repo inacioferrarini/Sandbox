@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export OPTS="lib/${project.artifactId}-${project.version}.jar"
-export OPTS="lib/logback-classic-1.0.7.jar:$OPTS"
-export OPTS="lib/logback-core-1.0.7.jar:$OPTS"
-export OPTS="lib/slf4j-api-1.6.6.jar:$OPTS"
+export OPTS="";
+for f in lib/*.jar; do export OPTS="$f:$OPTS"; done
 
 java -cp $OPTS ${package}.App $@
