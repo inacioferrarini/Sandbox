@@ -2,4 +2,4 @@ asspath
 .project
 .settings
 target
-*.log
+*.log*
