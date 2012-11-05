@@ -29,7 +29,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>${groupId}-ejb-module</finalName>
+		<finalName>${artifactId}-ejb-module</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
