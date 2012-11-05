@@ -1,0 +1,22 @@
+<archetype xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
+	<id>mvn-ejb-and-clientapp-archetype</id>
+	
+	<resources>
+		<resource>pom.xml</resource>
+		
+		<resource>app-client/src/main/assembly/append-to-distribution/run.bat</resource>
+		<resource>app-client/src/main/assembly/append-to-distribution/run.sh</resource>
+		<resource>app-client/src/main/assembly/assembly.xml</resource>
+		<resource>app-client/src/main/filters/filter.properties</resource>
+		<resource>app-client/src/main/java/App.java</resource>
+		<resource>app-client/src/main/resources/logback.xml</resource>
+		<resource>app-client/src/test/java/AppTest.java</resource>
+		<resource>app-client/src/test/resources/logback.xml</resource>
+		<resource>app-client/pom.xml</resource>
+
+		<resource>ejb-module/src/main/resources/META-INF/ejb-jar.xml</resource>
+		<resource>ejb-module/src/main/resources/META-INF/persistence.xml</resource>
+		<resource>ejb-module/pom.xml</resource>			
+	</resources>
+</archetype>

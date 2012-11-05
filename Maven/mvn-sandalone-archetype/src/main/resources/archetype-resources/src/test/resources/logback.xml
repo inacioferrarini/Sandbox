@@ -23,8 +23,9 @@
 	<logger name="package" level="LEVEL" />
     -->
 
-	<root level="error">
+	<root level="debug">
 		<appender-ref ref="stdout" />
 		<appender-ref ref="logfile" />
 	</root>
+	
 </configuration>
