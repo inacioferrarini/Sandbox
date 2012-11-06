@@ -1,0 +1,27 @@
+package sandbox.inacio.maven.generator.question;
+
+import sandbox.inacio.maven.generator.validation.ValidationUtils;
+
+/**
+ * Question about the Parent Project Name.
+ * 
+ * @author Inácio Ferrarini <inacio.ferrarini@gmail.com>
+ */
+public class ParentProjectNameQuestion extends AbstractQuestion {
+
+	/**
+	 * Constructor.
+	 */
+	public ParentProjectNameQuestion() {
+		super(QuestionId.PARENT_PROJECT_NAME, "Parent Project Name", null);
+	}
+
+	/** {@inheritDoc} */
+	@Override
+	public void validate() throws QuestionValidationException {
+		if (ValidationUtils.isEmpty(getAnswer())) {
+			throw new QuestionValidationException("Parent Module Name is required.");
+		}
+	}
+	
+}

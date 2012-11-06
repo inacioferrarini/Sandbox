@@ -9,12 +9,17 @@
 		<resource>app-client/src/main/assembly/append-to-distribution/run.sh</resource>
 		<resource>app-client/src/main/assembly/assembly.xml</resource>
 		<resource>app-client/src/main/filters/filter.properties</resource>
+		<resource>app-client/src/main/java/delete.me</resource>
 		<resource>app-client/src/main/resources/logback.xml</resource>
+		<resource>app-client/src/test/java/delete.me</resource>
 		<resource>app-client/src/test/resources/logback.xml</resource>
 		<resource>app-client/pom.xml</resource>
 
+		<resource>ejb-module/src/main/java/delete.me</resource>
 		<resource>ejb-module/src/main/resources/META-INF/ejb-jar.xml</resource>
 		<resource>ejb-module/src/main/resources/META-INF/persistence.xml</resource>
+		<resource>ejb-module/src/test/java/delete.me</resource>
+		<resource>ejb-module/src/test/resources/logback.xml</resource>
 		<resource>ejb-module/pom.xml</resource>			
 	</resources>
 </archetype>
