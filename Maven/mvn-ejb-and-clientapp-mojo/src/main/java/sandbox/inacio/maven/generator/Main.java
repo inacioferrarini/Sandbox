@@ -9,13 +9,16 @@ import java.util.Map;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
+import sandbox.inacio.maven.generator.engine.ProjectBuilder;
 import sandbox.inacio.maven.generator.model.ModuleType;
 import sandbox.inacio.maven.generator.model.ProjectData;
 import sandbox.inacio.maven.generator.question.AbstractQuestion;
 import sandbox.inacio.maven.generator.question.ClientModuleNameQuestion;
 import sandbox.inacio.maven.generator.question.ConfirmConfigurationQuestion;
 import sandbox.inacio.maven.generator.question.EJBModuleNameQuestion;
+import sandbox.inacio.maven.generator.question.ParentProjectGroupIdQuestion;
 import sandbox.inacio.maven.generator.question.ParentProjectNameQuestion;
+import sandbox.inacio.maven.generator.question.ParentProjectVersionQuestion;
 import sandbox.inacio.maven.generator.question.QuestionId;
 
 /**
@@ -37,11 +40,8 @@ public class Main extends AbstractMojo {
 		
 		ProjectData project = parseProjectData(q);
 		
-		writer.println("parent: " + project.getName());
-		for (ProjectData p : project.getChildrenProjects()) {
-			writer.println("child: " + p.getName() + "/" + p.getType().toString());
-		}
-		
+		ProjectBuilder builder = new ProjectBuilder();
+		builder.generateProject(project, writer);
 	}
 	
 	protected void getProjectDataFromUser(Map<QuestionId, AbstractQuestion> questions, PrintStream writer, BufferedReader reader) {
@@ -62,7 +62,9 @@ public class Main extends AbstractMojo {
 	protected Map<QuestionId, AbstractQuestion> getQuestions() {
 		Map<QuestionId, AbstractQuestion> q = new LinkedHashMap<QuestionId, AbstractQuestion>();
 
+		q.put(QuestionId.PARENT_PROJECT_GROUP_ID, new ParentProjectGroupIdQuestion());
 		q.put(QuestionId.PARENT_PROJECT_NAME, new ParentProjectNameQuestion());
+		q.put(QuestionId.PARENT_PROJECT_VERSION, new ParentProjectVersionQuestion());
 		q.put(QuestionId.EJB_MODULE_NAME, new EJBModuleNameQuestion());
 		q.put(QuestionId.CLIENT_MODULE_NAME, new ClientModuleNameQuestion());
 
@@ -88,9 +90,14 @@ public class Main extends AbstractMojo {
 	}
 	
 	protected ProjectData parseProjectData(Map<QuestionId, AbstractQuestion> questionsAndAnswers) {
+		String parentProjectGroupId = 
+				questionsAndAnswers.get(QuestionId.PARENT_PROJECT_GROUP_ID).getAnswer();
 		String parentProjectName = 
 				questionsAndAnswers.get(QuestionId.PARENT_PROJECT_NAME).getAnswer();
-		ProjectData parentProject = new ProjectData(parentProjectName, ModuleType.PARENT);
+		String parentProjectVersion =
+				questionsAndAnswers.get(QuestionId.PARENT_PROJECT_VERSION).getAnswer();
+		
+		ProjectData parentProject = new ProjectData(parentProjectGroupId, parentProjectName, parentProjectVersion, ModuleType.PARENT);
 		
 		for (AbstractQuestion q : questionsAndAnswers.values()) {
 			if (!q.getQuestionId().equals(QuestionId.PARENT_PROJECT_NAME)) {
@@ -101,9 +108,10 @@ public class Main extends AbstractMojo {
 				} else if (q.getQuestionId().equals(QuestionId.EJB_MODULE_NAME)) {
 					moduleType = ModuleType.EJB;
 				}
-				
-				ProjectData module = new ProjectData(q.getAnswer(), moduleType);
-				parentProject.getChildrenProjects().add(module);
+				if (moduleType != null) {
+					ProjectData module = new ProjectData(parentProjectGroupId, q.getAnswer(), parentProjectVersion, moduleType, parentProject);
+					parentProject.getModules().add(module);
+				}
 			}
 		}	
 		return parentProject;

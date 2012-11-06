@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>${vtl_groupId}</groupId>
+		<artifactId>${vtl_artifactId}</artifactId>
+		<version>${vtl_version}</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>${vtl_project.name}</artifactId>
+	<packaging>ejb</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>ejb3-persistence</artifactId>
+			<version>1.0.1.GA</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-ejb3x</artifactId>
+			<version>4.2.2.GA</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${vtl_project.name}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<generateClient>true</generateClient>
+					<clientExcludes>
+						<clientExclude>**/*Bean.class</clientExclude>
+					</clientExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
