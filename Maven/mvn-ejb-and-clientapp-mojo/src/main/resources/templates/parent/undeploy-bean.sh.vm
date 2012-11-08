@@ -2,6 +2,6 @@
 
 #foreach($module in $vtl_parent.modules) 
 #if($module.type == "EJB")
-cp ${module.name}/target/${module.name}.jar $JBOSS_HOME/server/default/deploy
+rm $JBOSS_HOME/server/default/deploy/${module.name}.jar
 #end
 #end

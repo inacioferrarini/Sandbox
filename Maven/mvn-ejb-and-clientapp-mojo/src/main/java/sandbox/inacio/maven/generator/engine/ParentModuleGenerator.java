@@ -19,6 +19,8 @@ public class ParentModuleGenerator extends AbstractModuleGenerator {
 	public List<String> getTemplateFileList() {
 		List<String> files = new ArrayList<String>();
 
+		files.add("deploy-bean.sh.vm");
+		files.add("undeploy-bean.sh.vm");
 		files.add("pom.xml.vm");
 		
 		return files;
