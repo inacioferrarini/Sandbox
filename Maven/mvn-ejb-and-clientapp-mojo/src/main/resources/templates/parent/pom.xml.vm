@@ -7,11 +7,11 @@
 	<packaging>pom</packaging>
 
 #if($vtl_project.modules.size() > 0)
-	<modules>	
+	<modules>
 #foreach($module in $vtl_project.modules)
 		<module>$module.name</module>
 #end
 	</modules>
 #end
-	
+
 </project>

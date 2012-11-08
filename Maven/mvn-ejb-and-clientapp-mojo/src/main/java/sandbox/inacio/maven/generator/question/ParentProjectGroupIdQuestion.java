@@ -11,9 +11,10 @@ public class ParentProjectGroupIdQuestion extends AbstractQuestion {
 
 	/**
 	 * Constructor.
+	 * @param commandLineAnswer the answer to the question provided by command line.
 	 */
-	public ParentProjectGroupIdQuestion() {
-		super(QuestionId.PARENT_PROJECT_GROUP_ID, "Parent Project Group Id", null);
+	public ParentProjectGroupIdQuestion(String commandLineAnswer) {
+		super(QuestionId.PARENT_PROJECT_GROUP_ID, "Parent Project Group Id", null, commandLineAnswer);
 	}
 
 	/** {@inheritDoc} */

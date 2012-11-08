@@ -11,9 +11,10 @@ public class ClientModuleNameQuestion extends AbstractQuestion {
 	
 	/**
 	 * Constructor.
+	 * @param commandLineAnswer the answer to the question provided by command line.
 	 */ 
-	public ClientModuleNameQuestion() {
-		super(QuestionId.CLIENT_MODULE_NAME, "Client Module Name", null);
+	public ClientModuleNameQuestion(String commandLineAnswer) {
+		super(QuestionId.CLIENT_MODULE_NAME, "Client Module Name", null, commandLineAnswer);
 	}
 
 	/** {@inheritDoc} */

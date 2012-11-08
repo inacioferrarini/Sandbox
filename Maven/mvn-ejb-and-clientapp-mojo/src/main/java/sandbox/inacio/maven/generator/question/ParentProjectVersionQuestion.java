@@ -11,9 +11,10 @@ public class ParentProjectVersionQuestion extends AbstractQuestion {
 
 	/**
 	 * Constructor.
+	 * @param commandLineAnswer the answer to the question provided by command line.
 	 */
-	public ParentProjectVersionQuestion() {
-		super(QuestionId.PARENT_PROJECT_VERSION, "Parent Project Version", null);
+	public ParentProjectVersionQuestion(String commandLineAnswer) {
+		super(QuestionId.PARENT_PROJECT_VERSION, "Parent Project Version", null, commandLineAnswer);
 	}
 
 	/** {@inheritDoc} */

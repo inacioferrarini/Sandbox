@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- appenders -->
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[${project.version}] [%d{dd-MM-yyyy HH:mm:ss,Brazil/East}] [%thread] %-5level %logger: %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${project.artifactId}-tests.log</File>
+		<Append>true</Append>
+		<encoder>
+			<pattern>[${project.version}] [%d{dd-MM-yyyy HH:mm:ss,Brazil/East}] [%thread] %-5level %logger: %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${project.artifactId}-tests.log.%d{yyyy-MM-dd}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+
+    <!-- 
+	<logger name="package" level="LEVEL" />
+    -->
+
+	<root level="debug">
+		<appender-ref ref="stdout" />
+		<appender-ref ref="logfile" />
+	</root>
+	
+</configuration>

@@ -18,9 +18,15 @@ public class EJBModuleGenerator extends AbstractModuleGenerator {
 	@Override
 	public List<String> getTemplateFileList() {
 		List<String> files = new ArrayList<String>();
-
+		
+		files.add("src/main/java/delete.me");
+		files.add("src/main/resources/META-INF/ejb-jar.xml.vm");
+		files.add("src/main/resources/META-INF/persistence.xml.vm");
+		files.add("src/main/resources/logback.xml.vm");
+		files.add("src/test/java/delete.me");
+		files.add("src/test/resources/logback.xml.vm");
 		files.add("pom.xml.vm");
-
+		
 		return files;
 	}
 

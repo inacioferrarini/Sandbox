@@ -36,6 +36,22 @@ public abstract class AbstractQuestion {
 		this.defaultAnswer = defaultAnswer;
 	}
 
+	/**
+	 * Constructor to be used by children's classes.
+	 * 
+	 * @param questionId The Question's Identifier.
+	 * @param text The Question's Text (that will be asked to the user).
+	 * @param defaultAnswer The Question's Default Answer (In case the user answer is null). 
+	 * @param answer the answer for this question (some questions are already answered through command line).
+	 */
+	public AbstractQuestion(QuestionId questionId, String text, String defaultAnswer, String answer) {
+		super();
+		this.questionId = questionId;
+		this.text = text;
+		this.answer = answer;
+		this.defaultAnswer = defaultAnswer;
+	}	
+	
 	public QuestionId getQuestionId() {
 		return questionId;
 	}
