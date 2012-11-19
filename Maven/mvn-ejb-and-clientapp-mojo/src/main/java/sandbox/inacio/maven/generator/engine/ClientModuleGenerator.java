@@ -25,7 +25,7 @@ public class ClientModuleGenerator extends AbstractModuleGenerator {
 		files.add(new Resource("src/main/assembly/append-to-distribution/run.sh.vm", null, "755"));
 		files.add(new Resource("src/main/assembly/assembly.xml.vm"));
 		files.add(new Resource("src/main/filters/filter.properties.vm"));
-		files.add(new Resource("src/main/java/delete.me"));
+		files.add(new Resource("src/main/java/AppClient.java.vm"));
 		files.add(new Resource("src/main/resources/jndi.properties.vm"));
 		files.add(new Resource("src/main/resources/logback.xml.vm"));
 		files.add(new Resource("src/test/java/delete.me"));		

@@ -21,8 +21,11 @@ public class ParentModuleGenerator extends AbstractModuleGenerator {
 	public List<Resource> getTemplateFileList() {
 		List<Resource> files = new ArrayList<Resource>();
 
-		files.add(new Resource("deploy-bean.sh.vm", null, "755"));
-		files.add(new Resource("undeploy-bean.sh.vm", null, "755"));
+		files.add(new Resource("jboss-start.sh.vm", null, "755"));
+		files.add(new Resource("jboss-stop.sh.vm", null, "755"));
+		files.add(new Resource("run-clients.sh.vm", null, "755"));		
+		files.add(new Resource("deploy-ejb-modules.sh.vm", null, "755"));
+		files.add(new Resource("undeploy-ejb-modules.sh.vm", null, "755"));		
 		files.add(new Resource("pom.xml.vm"));
 		files.add(new Resource("dotgitignore.vm", ".gitignore"));
 		

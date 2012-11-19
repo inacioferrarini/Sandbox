@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#foreach($module in $vtl_parent.modules) 
+#if($module.type == "CLIENT")
+cd ${module.name}/target/${module.name}-distribution
+./run.sh
+cd ../../../
+#end
+#end
