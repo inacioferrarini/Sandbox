@@ -2,6 +2,7 @@
 
 #foreach($module in $vtl_parent.modules) 
 #if($module.type == "EJB")
+echo removing ${module.name}.jar from $JBOSS_HOME/server/default/deploy
 rm $JBOSS_HOME/server/default/deploy/${module.name}.jar
 #end
 #end

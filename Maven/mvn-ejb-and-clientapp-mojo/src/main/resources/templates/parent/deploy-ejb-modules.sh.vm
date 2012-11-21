@@ -2,6 +2,7 @@
 
 #foreach($module in $vtl_parent.modules) 
 #if($module.type == "EJB")
+echo copying ${module.name}.jar to $JBOSS_HOME/server/default/deploy
 cp ${module.name}/target/${module.name}.jar $JBOSS_HOME/server/default/deploy
 #end
 #end
