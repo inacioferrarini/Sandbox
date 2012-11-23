@@ -3,3 +3,4 @@
 .settings
 target
 *.log*
+.DS_Store
