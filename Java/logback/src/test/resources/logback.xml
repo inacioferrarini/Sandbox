@@ -3,9 +3,9 @@
 
 	<!-- appenders -->
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<pattern>[${project.version}] [%d{dd-MM-yyyy HH:mm:ss,Brazil/East}] [%thread] %-5level %logger: %msg%n</pattern>
-		</layout>
+		</encoder>
 	</appender>
 
 	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
