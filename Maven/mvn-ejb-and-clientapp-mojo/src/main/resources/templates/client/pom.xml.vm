@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<slf4j.version>1.6.6</slf4j.version>
 		<logback.version>1.0.7</logback.version>
-		<jboss.version>4.0.4.GA</jboss.version>
+		<jboss.version>4.3.2.GA</jboss.version>
 	</properties>
 
 	<dependencies>
