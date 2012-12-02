@@ -39,6 +39,9 @@
 					<generateClient>true</generateClient>
 					<clientExcludes>
 						<clientExclude>**/*Bean.class</clientExclude>
+						<clientExclude>logback.xml</clientExclude>
+						<clientExclude>META-INF/ejb-jar.xml</clientExclude>
+						<clientExclude>META-INF/persistence.xml</clientExclude>						
 					</clientExcludes>
 				</configuration>
 			</plugin>
