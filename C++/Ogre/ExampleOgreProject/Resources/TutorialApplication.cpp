@@ -61,10 +61,11 @@ extern "C" {
 #endif
     {
         
-        
+#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
         Ogre::String workingDir = Ogre::macBundlePath()+"/Contents/Resources";
         chdir(workingDir.c_str());
         std::cout << "working directory: "+workingDir+"\n";
+#endif  
         
         // Create application object
         TutorialApplication app;

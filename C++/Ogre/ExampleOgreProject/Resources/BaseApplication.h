@@ -34,7 +34,10 @@ This source file is part of the
 #include "SdkTrays.h"
 #include "SdkCameraMan.h"
 
+#if OGRE_PLATFORM == OGRE_PLATFORM_APPLE
 #include "macUtils.h"
+#endif
+
 
 class BaseApplication : public Ogre::FrameListener, public Ogre::WindowEventListener, public OIS::KeyListener, public OIS::MouseListener, OgreBites::SdkTrayListener
 {
